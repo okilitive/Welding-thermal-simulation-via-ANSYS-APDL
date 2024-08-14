@@ -1,0 +1,22 @@
+/PREP7
+
+mm=0.001
+
+a1=200*mm
+b1=100*mm
+c1=2*mm
+
+a2=200*mm
+b2=100*mm
+c2=2*mm
+
+!!!default length is same and aligned
+!lap distance=lapD
+lapD=40*mm
+
+
+!!!!top plate
+BLOCK,0,a1,0,b1,0,c1
+
+!!!!bottom plate
+BLOCK,0+lapD,lapD-a2,0,b2,0,-c2
