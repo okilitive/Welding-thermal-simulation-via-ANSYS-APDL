@@ -13,42 +13,36 @@ c2=2*mm
 FZWid=4*mm
 
 !!!default length is same and aligned
-!lap distance=lapD
-lapD=40*mm
+!!lap distance=lapD
+lapD=20*mm
 
 !!!!!!!!!!3D dimensions
 !!!!fusion zone
-!essential keypoints
+!!essential keypoints
 K,1,0,0,0
 K,2,0,0,c1
 K,3,-FZWid,0,0
 L,1,2
 L,1,3
 
-!Parametric weldbeam surface
-!must first
+!!!Parametric weldbeam surface
+!!!must first
 K,4,-1*mm,0,1.7*mm
 K,5,-2*mm,0,1.2*mm
 K,6,-3*mm,0,0.6*mm
 BSPLIN,2,4,5,6,3
 A,1,2,3
-!SPLINE curve with multi lines
-!BSPLIN curve with one entire line
+!!SPLINE curve with multi lines
+!!BSPLIN curve with one entire line
 
+!!!extend to 3D
+!!!GUI to APDL!!!
+!FLST,2,1,5,ORDE,1   
+!FITEM,2,1   
+!VEXT,P51X, , ,0,a1,0,,,,
 
-
-FLST,2,1,5,ORDE,1   
-FITEM,2,1   
-VEXT,P51X, , ,0,0.2,0,,,,
-
-
-
-
-ASEL,S,AREA,,1
-
-!VEXTND,1,,,1,0,0   ! 拉伸面域1，沿Z轴方向，长度为1
-
-
+ASEL,S,AREA,,1  
+VEXT,ALL,,,,a1,, 
 
 
 !!!!top plate
