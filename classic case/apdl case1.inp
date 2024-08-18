@@ -30,21 +30,23 @@ L,1,3
 K,4,-1*mm,0,1.7*mm
 K,5,-2*mm,0,1.2*mm
 K,6,-3*mm,0,0.6*mm
-!SPLINE,2,4,5,6,3
 BSPLIN,2,4,5,6,3
 A,1,2,3
 !SPLINE curve with multi lines
 !BSPLIN curve with one entire line
-!curve smooth test again
 
 
 
-！ASEL,S,AREA,1,0 
-！VEXTND,1,,200*mm,,0,0
-!!extend operation, need redo
+FLST,2,1,5,ORDE,1   
+FITEM,2,1   
+VEXT,P51X, , ,0,0.2,0,,,,
 
 
 
+
+ASEL,S,AREA,,1
+
+!VEXTND,1,,,1,0,0   ! 拉伸面域1，沿Z轴方向，长度为1
 
 
 
