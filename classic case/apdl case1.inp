@@ -16,7 +16,8 @@ FZWid=4*mm
 !!lap distance=lapD
 lapD=20*mm
 
-!!!!!!!!!!3D dimensions
+!!!!!!!!!!3D dimensions!!!!!!!!!!!!!!!!!!!
+
 !!!!fusion zone
 !!essential keypoints
 K,1,0,0,0
@@ -49,6 +50,17 @@ BLOCK,0,b1,0,a1,0,c1
 
 !!!!bottom plate
 BLOCK,0+lapD,lapD-b2,0,a2,0,-c2
+
+!!!!!!!!!!!!!!!!Mesh!!!!!!!!!!!!!!!!!!!!
+ET,1,SOLID186  
+
+ALLSEL,ALL  
+VMESH,ALL   
+!!!need more control and setting parameters
+
+!!!!!!!!!!!!!!!!!Contact Pair!!!!!!!!!!!!!!!!!
+A3 TO A10
+A5 TO A13
 
 
 
