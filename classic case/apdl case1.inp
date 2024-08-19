@@ -51,6 +51,11 @@ BLOCK,0,b1,0,a1,0,c1
 !!!!bottom plate
 BLOCK,0+lapD,lapD-b2,0,a2,0,-c2
 
+
+
+!!
+!!
+GET GUI CODE FROM APDL AND CLEAR WHIHC IS KEY SET
 !!!!!!!!!!!!!!!!Mesh!!!!!!!!!!!!!!!!!!!!
 ET,1,SOLID186  
 
