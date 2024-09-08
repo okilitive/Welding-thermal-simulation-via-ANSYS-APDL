@@ -70,6 +70,139 @@ A5 TO A13
 
 
 
+!!!!!!!!!!!!!!!!!workbench APDL!!!!!!!!!!!
+!   Commands inserted into this file will be executed just prior to the ANSYS SOLVE command.
+!   These commands may supersede command settings set by Workbench.
+
+!   Active UNIT system in Workbench when this object was created:  Metric (m, kg, N, s, V, A)
+!   NOTE:  Any data that requires units (such as mass) is assumed to be in the consistent solver unit system.
+!                See Solving Units in the help system for more information.
+FINISH
+/PREP7
+N=0.60
+Q=1500
+A=0.0018
+B=0.0018
+C=0.001
+I=0
+J=0
+K=0
+V=0.00834
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
+*DEL,_FNCNAME   
+*DEL,_FNCMTID   
+*DEL,_FNC_C1
+*DEL,_FNC_C2
+*DEL,_FNC_C3
+*DEL,_FNC_C4
+*DEL,_FNC_C5
+*DEL,_FNC_C6
+*DEL,_FNC_C7
+*DEL,_FNC_C8
+*DEL,_FNC_C9
+*DEL,_FNCCSYS   
+*SET,_FNCNAME,'MHEAT'   
+*DIM,_FNC_C1,,1 
+*DIM,_FNC_C2,,1 
+*DIM,_FNC_C3,,1 
+*DIM,_FNC_C4,,1 
+*DIM,_FNC_C5,,1 
+*DIM,_FNC_C6,,1 
+*DIM,_FNC_C7,,1 
+*DIM,_FNC_C8,,1 
+*DIM,_FNC_C9,,1 
+*SET,_FNC_C1(1),N   
+*SET,_FNC_C2(1),Q   
+*SET,_FNC_C3(1),I   
+*SET,_FNC_C4(1),A   
+*SET,_FNC_C5(1),J   
+*SET,_FNC_C6(1),V   
+*SET,_FNC_C7(1),B   
+*SET,_FNC_C8(1),K   
+*SET,_FNC_C9(1),C   
+*SET,_FNCCSYS,12 
+! /INPUT,D:\BaiduNetdiskDownload\HEATSOURCE\MHEAT.func,,,1  
+*DIM,%_FNCNAME%,TABLE,11,43,1,,,,%_FNCCSYS% 
+!   
+! Begin of equation: 6*sqrt(3)*N*Q*exp(-3*((({X}-I)^2/A^2)+(({Y}-J-V*{TIME})^2/ 
+! B^2)+(({Z}-K)^2/C^2)))/(A*B*C*(3.14)^(1.5))   
+*SET,%_FNCNAME%(0,0,1), 0.0, -999   
+*SET,%_FNCNAME%(2,0,1), 0.0 
+*SET,%_FNCNAME%(3,0,1), %_FNC_C1(1)%
+*SET,%_FNCNAME%(4,0,1), %_FNC_C2(1)%
+*SET,%_FNCNAME%(5,0,1), %_FNC_C3(1)%
+*SET,%_FNCNAME%(6,0,1), %_FNC_C4(1)%
+*SET,%_FNCNAME%(7,0,1), %_FNC_C5(1)%
+*SET,%_FNCNAME%(8,0,1), %_FNC_C6(1)%
+*SET,%_FNCNAME%(9,0,1), %_FNC_C7(1)%
+*SET,%_FNCNAME%(10,0,1), %_FNC_C8(1)%   
+*SET,%_FNCNAME%(11,0,1), %_FNC_C9(1)%   
+*SET,%_FNCNAME%(0,1,1), 1.0, -1, 16, 3, 0, 0, 0 
+*SET,%_FNCNAME%(0,2,1), 0.0, -2, 0, 6, 0, 0, -1 
+*SET,%_FNCNAME%(0,3,1),   0, -3, 0, 1, -2, 3, -1
+*SET,%_FNCNAME%(0,4,1), 0.0, -1, 0, 1, -3, 3, 17
+*SET,%_FNCNAME%(0,5,1), 0.0, -2, 0, 1, -1, 3, 18
+*SET,%_FNCNAME%(0,6,1), 0.0, -1, 0, 0, 0, 0, 0  
+*SET,%_FNCNAME%(0,7,1), 0.0, -3, 0, 1, 0, 0, -1 
+*SET,%_FNCNAME%(0,8,1), 0.0, -4, 0, 1, -1, 2, -3
+*SET,%_FNCNAME%(0,9,1), 0.0, -1, 0, 3, 0, 0, -4 
+*SET,%_FNCNAME%(0,10,1), 0.0, -3, 0, 1, -4, 3, -1   
+*SET,%_FNCNAME%(0,11,1), 0.0, -1, 0, 1, 2, 2, 19
+*SET,%_FNCNAME%(0,12,1), 0.0, -4, 0, 2, 0, 0, -1
+*SET,%_FNCNAME%(0,13,1), 0.0, -5, 0, 1, -1, 17, -4  
+*SET,%_FNCNAME%(0,14,1), 0.0, -1, 0, 2, 0, 0, 20
+*SET,%_FNCNAME%(0,15,1), 0.0, -4, 0, 1, 20, 17, -1  
+*SET,%_FNCNAME%(0,16,1), 0.0, -1, 0, 1, -5, 4, -4   
+*SET,%_FNCNAME%(0,17,1), 0.0, -4, 0, 1, 3, 2, 21
+*SET,%_FNCNAME%(0,18,1), 0.0, -5, 0, 1, 22, 3, 1
+*SET,%_FNCNAME%(0,19,1), 0.0, -6, 0, 1, -4, 2, -5   
+*SET,%_FNCNAME%(0,20,1), 0.0, -4, 0, 2, 0, 0, -6
+*SET,%_FNCNAME%(0,21,1), 0.0, -5, 0, 1, -6, 17, -4  
+*SET,%_FNCNAME%(0,22,1), 0.0, -4, 0, 2, 0, 0, 23
+*SET,%_FNCNAME%(0,23,1), 0.0, -6, 0, 1, 23, 17, -4  
+*SET,%_FNCNAME%(0,24,1), 0.0, -4, 0, 1, -5, 4, -6   
+*SET,%_FNCNAME%(0,25,1), 0.0, -5, 0, 1, -1, 1, -4   
+*SET,%_FNCNAME%(0,26,1), 0.0, -1, 0, 1, 4, 2, 24
+*SET,%_FNCNAME%(0,27,1), 0.0, -4, 0, 2, 0, 0, -1
+*SET,%_FNCNAME%(0,28,1), 0.0, -6, 0, 1, -1, 17, -4  
+*SET,%_FNCNAME%(0,29,1), 0.0, -1, 0, 2, 0, 0, 25
+*SET,%_FNCNAME%(0,30,1), 0.0, -4, 0, 1, 25, 17, -1  
+*SET,%_FNCNAME%(0,31,1), 0.0, -1, 0, 1, -6, 4, -4   
+*SET,%_FNCNAME%(0,32,1), 0.0, -4, 0, 1, -5, 1, -1   
+*SET,%_FNCNAME%(0,33,1), 0.0, -1, 0, 1, -3, 3, -4   
+*SET,%_FNCNAME%(0,34,1), 0.0, -1, 7, 1, -1, 0, 0
+*SET,%_FNCNAME%(0,35,1), 0.0, -3, 0, 1, -2, 3, -1   
+*SET,%_FNCNAME%(0,36,1), 0.0, -1, 0, 1, 20, 3, 23   
+*SET,%_FNCNAME%(0,37,1), 0.0, -2, 0, 1, -1, 3, 25   
+*SET,%_FNCNAME%(0,38,1), 0.0, -1, 0, 3.14, 0, 0, 0  
+*SET,%_FNCNAME%(0,39,1), 0.0, -4, 0, 1.5, 0, 0, -1  
+*SET,%_FNCNAME%(0,40,1), 0.0, -5, 0, 1, -1, 17, -4  
+*SET,%_FNCNAME%(0,41,1), 0.0, -1, 0, 1, -2, 3, -5   
+*SET,%_FNCNAME%(0,42,1), 0.0, -2, 0, 1, -3, 4, -1   
+*SET,%_FNCNAME%(0,43,1), 0.0, 99, 0, 1, -2, 0, 0
+! End of equation: 6*sqrt(3)*N*Q*exp(-3*((({X}-I)^2/A^2)+(({Y}-J-V*{TIME})^2/B^ 
+! 2)+(({Z}-K)^2/C^2)))/(A*B*C*(3.14)^(1.5)) 
+!-->
+
+
+BF,MHEAT,HGEN,%MHEAT%
+
+/SOLU
+CMSEL,S,MHEAT
+EKILL,ALL
+*DO,I,1,50,1
+NSUBST,5
+TIME,I*0.3
+CMSEL,S,MHEAT
+ESEL,R,CENT,Z,0.026861,0.027761+V*I*0.3
+EALIVE,ALL
+ALLSEL,ALL
+SOLVE
+*ENDDO
+
+
+
 
 
 
