@@ -67,7 +67,13 @@ VMESH,ALL
 A3 TO A10
 A5 TO A13
 
-
+!!!!!!!!!!!!!!!!!!!!Materials!!!!!!!!!!!!!!!!!!
+density,thermal conductivity,specific heat,enthaly
+kg/m3,W/mC,J/kgC,Jm3
+5052,22,2680,164.8,898,100
+5052,500,,181.6,1216,1.2E9
+Q235B,22,7800,40.6,451.7,1E7
+Q235B,500,,36.2,691,1.8E9
 
 
 !!!!!!!!!!!!!!!!!workbench APDL!!!!!!!!!!!
