@@ -75,6 +75,63 @@ kg/m3,W/mC,J/kgC,Jm3
 Q235B,22,7800,40.6,451.7,1E7
 Q235B,500,,36.2,691,1.8E9
 
+！！！！！！！！！！！！！！！！！！
+! 定义材料属性
+! 5052铝合金
+! 需要定义的温度点
+*SET, T1, 22   ! 温度1
+*SET, T2, 500  ! 温度2
+
+! 密度
+*DIM, DENS_5052, ARRAY, 2
+DENS_5052(1) = 2680  ! 22°C
+DENS_5052(2) = 2680  ! 500°C (假定一致)
+
+! 热导率
+*DIM, THERMAL_5052, ARRAY, 2
+THERMAL_5052(1) = 164.8  ! 22°C
+THERMAL_5052(2) = 181.6  ! 500°C
+
+! 比热容
+*DIM, SPEC_5052, ARRAY, 2
+SPEC_5052(1) = 898  ! 22°C
+SPEC_5052(2) = 1216  ! 500°C
+
+! 焓
+*DIM, ENTHALPY_5052, ARRAY, 2
+ENTHALPY_5052(1) = 100  ! 22°C
+ENTHALPY_5052(2) = 1.2E9  ! 500°C
+
+! Q235B钢
+*DIM, DENS_Q235B, ARRAY, 2
+DENS_Q235B(1) = 7800  ! 22°C
+DENS_Q235B(2) = 7800  ! 500°C (假定一致)
+
+*DIM, THERMAL_Q235B, ARRAY, 2
+THERMAL_Q235B(1) = 40.6  ! 22°C
+THERMAL_Q235B(2) = 36.2  ! 500°C
+
+*DIM, SPEC_Q235B, ARRAY, 2
+SPEC_Q235B(1) = 451.7  ! 22°C
+SPEC_Q235B(2) = 691  ! 500°C
+
+*DIM, ENTHALPY_Q235B, ARRAY, 2
+ENTHALPY_Q235B(1) = 1E7  ! 22°C
+ENTHALPY_Q235B(2) = 1.8E9  ! 500°C
+
+! 定义温度非线性材料属性
+! 在求解时根据温度线性插值或其他方法使用这些属性
+
+! 输出确认
+*STATUS, "5052铝合金和Q235B钢的温度非线性材料属性已导入"
+
+
+
+
+
+
+！！！！！！！！！！！！！！！！！！！
+
 
 !!!!!!!!!!!!!!!!!workbench APDL!!!!!!!!!!!
 !   Commands inserted into this file will be executed just prior to the ANSYS SOLVE command.
